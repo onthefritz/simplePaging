@@ -13,7 +13,7 @@ Simply download the simplePaging.js file and reference it in your code. Make sur
 
 To call the paging you will want to set up some html first.
 
-The quickest way will be with using <div> tags.
+The quickest way will be with using `<div>` tags.
 
 ~~~
 <div id="pager">
