@@ -84,19 +84,19 @@ $('#pager').paging({
 
 To give a more in depth explination of these elements.
 
-`data` - This is the data that is wanting to be displayed. You can use JSON from any source for this but it needs to be JSON.
-`contentHolder` - This is the `id` for the container that will hold all the data once it has been applied to the template.
-`template` - This is the template that is being used to display the data. We created two above. One for the data and one for the error.
-`errorTemplate` - This is what is shown if there is no data to display. If you do not supply one there is a generic one that will fill in the area.
-`informationToShow` - This is the information from the data given that you want to display. In our example the template has {0} and {1}. These will corrospond to `firstname` and `lastname` respectively. The order in the array will matter for what is displayed in each location.
-`informationToRefineBy` - This is the information that the search will use to refine by. In our case we want to search on the `firstname` and `lastname` columns from the data.
-`perPage` - Default number of items to show per page. We are using a small amount of data so 1 per page will do for default.
-`pageLengths` - This will be a drop down that will give options for the possible number of items to display per page.
-`startPage` - This is what page you want to start on for your pager. The defualt is 1 which recommended but the option is there incase you want to change it.
-`pagesToShow` - This is the number of pages to show in the pager at any point in time. If you have 100 pages of content this will only show the number of specified pages at a time. A simple [...] will be displayed before and after the are of pages that are being shown. 
-`showOptions` - Shows the per page options drop down.
-`showSearch` - Shows the search bar.
-`alwaysShowPager` - Shows the pager even if there isn't any data to show. The only time this really applies is when you have the search bar shown. If they search and find no results we want to make sure that they can delete what they typed in without needing to refresh the page.
+`data` - This is the data that is wanting to be displayed. You can use JSON from any source for this but it needs to be JSON.  
+`contentHolder` - This is the `id` for the container that will hold all the data once it has been applied to the template.  
+`template` - This is the template that is being used to display the data. We created two above. One for the data and one for the error.  
+`errorTemplate` - This is what is shown if there is no data to display. If you do not supply one there is a generic one that will fill in the area.  
+`informationToShow` - This is the information from the data given that you want to display. In our example the template has {0} and {1}. These will corrospond to `firstname` and `lastname` respectively. The order in the array will matter for what is displayed in each location.  
+`informationToRefineBy` - This is the information that the search will use to refine by. In our case we want to search on the `firstname` and `lastname` columns from the data.  
+`perPage` - Default number of items to show per page. We are using a small amount of data so 1 per page will do for default.  
+`pageLengths` - This will be a drop down that will give options for the possible number of items to display per page.  
+`startPage` - This is what page you want to start on for your pager. The defualt is 1 which recommended but the option is there incase you want to change it.  
+`pagesToShow` - This is the number of pages to show in the pager at any point in time. If you have 100 pages of content this will only show the number of specified pages at a time. A simple [...] will be displayed before and after the are of pages that are being shown.   
+`showOptions` - Shows the per page options drop down.  
+`showSearch` - Shows the search bar.  
+`alwaysShowPager` - Shows the pager even if there isn't any data to show. The only time this really applies is when you have the search bar shown. If they search and find no results we want to make sure that they can delete what they typed in without needing to refresh the page.  
 
 Once you have all this put together you will get the follow display:
 
