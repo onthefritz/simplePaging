@@ -104,4 +104,4 @@ Once you have all this put together you will get the follow display:
 
 ## License
 
-Licensed under the MIT License. Use this for whatever you want and however you want.
+Licensed under the [MIT](https://github.com/onthefritz/simplePaging/blob/master/LICENSE.txt) License. Use this for whatever you want and however you want.
