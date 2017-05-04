@@ -99,4 +99,4 @@ To give a more in depth explination of these elements.
 
 Once you have all this put together you will get the follow display:
 
-![Paging Example](images/WorkingPaging.png)
+![Paging Example](images/WorkingPaging.PNG)
