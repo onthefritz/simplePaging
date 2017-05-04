@@ -83,6 +83,7 @@ $('#pager').paging({
 ~~~
 
 To give a more in depth explination of these elements.
+
 `data` - This is the data that is wanting to be displayed. You can use JSON from any source for this but it needs to be JSON.
 `contentHolder` - This is the `id` for the container that will hold all the data once it has been applied to the template.
 `template` - This is the template that is being used to display the data. We created two above. One for the data and one for the error.
