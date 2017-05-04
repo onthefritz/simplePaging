@@ -9,6 +9,9 @@ Simple, easy to customize paging system using jQuery.
 5. Custom event that is fired when anything happens in the pager
 
 ## How to use
+
+### Basic Functionality
+
 Simply download the simplePaging.js file and reference it in your code. Make sure to put this under the jQuery reference as this requires jQuery to function properly.
 
 To call the paging you will want to set up some html first.
@@ -101,6 +104,27 @@ To give a more in depth explination of these elements.
 Once you have all this put together you will get the follow display:
 
 ![Paging Example](images/WorkingPaging.PNG)
+
+### Events
+
+There is a custom event that is triggered anytime anything changes with the paging (e.g. change pages, change search criteria, change dropdown, etc.)
+
+To access this event just create an event handler on the element that is holding the pager.  
+For our case we would want to put it on the `pager` element.
+
+~~~
+$('#pager').on('pagingChange', function() {
+  //Capture the event here.
+});
+~~~
+
+## Complex situation
+
+I like bootstrap so when I created this I wanted to make sure that bootstrap was able to work alongside this plugin. 
+
+If you want to use bootstrap you will want to take a look into the index2.html file that is provided with this repo. There is a bit to much to explain here now.
+
+You will have to utalize the custome event that is triggered on paging changes for this to work properly as well.
 
 ## License
 
