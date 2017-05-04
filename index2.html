@@ -89,15 +89,27 @@
                     alwaysShowPager: true
                 });
 
+                //Since we can't wrap the data in rows in the template we have to do it afer the page loads to make everything look right.
+                //This grabs every .col-md-4 class in the dataContainer.
                 $("#dataContainer > .col-md-4").each(function(){
+                    //We want to wrap a row around 3 col-md-4 elements thus creating a full row in bootstrap.
+                    //We start with the boundary which is the first element that is in the parent.
         		    var boundary = $(this);
+
+                    //We then grab the next two elements that need to go with the boundary.
                     var follow = boundary.nextAll().slice(0, 2);
 
+                    //We want to make sure that the element is in the dataContainer div and not already in a bootstrap row div
+                    // so we check that here.
         		    if (boundary.parent().attr('id') == 'dataContainer') {
+                        //If it's not in the parent then insert a bootstrap row after the boundary.
+                        // Add the boundary first since we want to keep things in order then append the next 2 elements after that.
         				$("<div class='row'>").insertAfter(boundary).append(boundary).append(follow);
         			}
         		});
 
+                //When this event is fired we need to the full process over again for the new set of data being displayed.
+                //So we can just copy and paste from above and do it all over again.
         		$('#dataPager').on('pagingChange', function() {
         			$("#dataContainer > .col-md-4").each(function(){
         			    var boundary = $(this);
