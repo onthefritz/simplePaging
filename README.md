@@ -15,10 +15,12 @@ To call the paging you will want to set up some html first.
 
 The quickest way will be with using <div> tags.
 
-  <div id="pager">
-  </div>
-  <div id="content">
-  </div>
+~~~
+<div id="pager">
+</div>
+<div id="content">
+</div>
+~~~
 
 You can use any container for holding the pager and content.
 
