@@ -1,0 +1,128 @@
+<html>
+    <head>
+        <script src="js/jquery-3.1.1.js"></script>
+        <script src="js/bootstrap/js/bootstrap.js"></script>
+        <script src="customPaging.js"></script>
+        <link rel="stylesheet" href="css/simpleStyles.css">
+        <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
+
+        <style>
+            .green {
+                color: #00FF00;
+            }
+
+            .blue {
+                color: #0000FF;
+            }
+
+            .red {
+                color: #FF0000;
+            }
+
+            .col-md-4 {
+                text-align: center;
+            }
+
+            #dataContainer {
+                width: 80%;
+                margin: 0 auto;
+            }
+
+            .row {
+                border: solid 1px rgba(0,0,255,0.15);
+                margin: 10px auto;
+            }
+
+            .col-md-4 {
+                border: solid 1px rgba(0,0,255,0.15);
+            }
+
+            #content {
+                text-align: center;
+            }
+        </style>
+
+        <script type="text/template" id="dataTemplate">
+            <div class="col-md-4">
+                <div class="firstWay">
+                    <span class="blue">{0}</span> <span class="green">{1}</span> <span class="red">{2}</span>
+                </div>
+                <div class="secondWay">
+                    <span class="red">{0}</span> <span class="blue">{1}</span> <span class="green">{2}</span>
+                </div>
+            </div>
+        </script>
+
+        <script type="text/template" id="dataErrorTemplate">
+            <div>
+                No Data
+            </div>
+        </script>
+
+        <script type="text/template" id="contentTemplate">
+            <div>
+                Firstname: {0}
+            </div>
+            <div>
+                Lastname: {1}
+            </div>
+        </script>
+
+        <script type="text/template" id="contentErrorTemplate">
+            <div>
+                There is no data to show.
+            </div>
+        </script>
+
+        <script>
+            $(document).ready(function() {
+                var data1 = [{"col1":"data1","col2":"data2","col3":"data3"},
+                            {"col1":"dataA1","col2":"dataA2","col3":"dataA3"},
+                            {"col1":"dataB1","col2":"dataB2","col3":"dataB3"},
+                            {"col1":"dataC1","col2":"dataC2","col3":"dataC3"},
+                            {"col1":"dataD1","col2":"dataD2","col3":"dataD3"},
+                            {"col1":"dataE1","col2":"dataE2","col3":"dataE3"},
+                            {"col1":"dataF1","col2":"dataF2","col3":"dataF3"},
+                            {"col1":"dataG1","col2":"dataG2","col3":"dataG3"},
+                            {"col1":"dataH1","col2":"dataH2","col3":"dataH3"},
+                            {"col1":"dataI1","col2":"dataI2","col3":"dataI3"},
+                            {"col1":"dataJ1","col2":"dataJ2","col3":"dataJ3"},
+                            {"col1":"dataK1","col2":"dataK2","col3":"dataK3"},
+                            {"col1":"dataL1","col2":"dataL2","col3":"dataL3"},
+                            {"col1":"dataM1","col2":"dataM2","col3":"dataM3"},
+                            {"col1":"dataN1","col2":"dataN2","col3":"dataN3"}];
+
+                var data = [{"firstname":"John","lastname":"Smith"},
+                        {"firstname":"Jane","lastname":"Doe"},
+                        {"firstname":"James","lastname":"Smith"},
+                        {"firstname":"Amanda","lastname":"Doe"},
+                        {"firstname":"Billy","lastname":"Joe"}];
+
+                $('#pager').paging({
+                  data: data,   //This is the data that is being used. It is using JSON data so you can pull from any source if you want.
+                  contentHolder: 'content',   //The id for the area where you want the data to be displayed.
+                  template: 'contentTemplate',    //The template that is being used to display the data.
+                  errorTemplate: 'contentErrorTemplate',    //The error template that is being used (optional)
+                  informationToShow: ['firstname', 'lastname'],   //The information that you want to show from the given data
+                  informationToRefineBy: ['firstname', 'lastname'],   //The information that you want to search on from the given data
+                  perPage: 1,   //Default number to show per page. (Since we have a small amount of data only show 1.)
+                  pageLengths: [1, 2, 3, 4],  //Options for number of items per page.
+                  startPage: 1,   //The default start page. (Better to leave as 1 but can be changed if desired).
+                  pagesToShow: 4,   //Number of pages to show at the top. If you have 10 pages it will show [...] when going above or below the this number.
+                  showOptions: true,    //Show the per page options.
+                  showSearch: true,   //Show the search bar.
+                  alwaysShowPager: true   //Show the pager even if there isn't any data. Should be true if showSearch is true otherwise there will be problems.
+                });
+
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+            <div id="pager">
+            </div>
+            <div id="content">
+            </div>
+        </div>
+    </body>
+</html>

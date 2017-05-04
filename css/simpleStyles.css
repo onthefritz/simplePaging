@@ -1,0 +1,59 @@
+.pager span.current {
+    border: red;
+    border-radius: 5px;
+    font-weight: bold;
+    color: red;
+}
+
+.dataError {
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+}
+
+.searchBox {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.searchBox .search {
+    width: 100%;
+    height: 30px;
+}
+
+.showing {
+	width: 100%;
+	text-align: center;
+}
+
+.dropdown:hover .dropdown-menu {
+	display: block;
+}
+
+.pager span {
+	border-radius: 5px;
+	border: #a6a6a8 1px solid;
+	padding: 5px 14px;
+    margin: 0 3px;
+    cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.pager span:hover {
+	background-color: #ddd;
+}
+
+.pager span.current:hover {
+    background-color: #fff;
+	cursor: default;
+}
+
+.pager {
+    padding-left: 0;
+    margin: 20px 0;
+    text-align: center;
+    list-style: none;
+}
