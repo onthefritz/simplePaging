@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <script src="js/jquery-3.1.1.js"></script>
+        <script src="js/bootstrap/js/bootstrap.js"></script>
+        <script src="simplePaging1.0.js"></script>
+        <link rel="stylesheet" href="css/simpleStyles.css">
+        <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
+
+        <style>
+            .green {
+                color: #00FF00;
+            }
+
+            .blue {
+                color: #0000FF;
+            }
+
+            .red {
+                color: #FF0000;
+            }
+
+            .col-md-4 {
+                text-align: center;
+            }
+
+            #dataContainer {
+                width: 80%;
+                margin: 0 auto;
+            }
+
+            .row {
+                border: solid 1px rgba(0,0,255,0.15);
+                margin: 10px auto;
+            }
+
+            .col-md-4 {
+                border: solid 1px rgba(0,0,255,0.15);
+            }
+        </style>
+
+        <script type="text/template" id="dataTemplate">
+            <div class="col-md-4">
+                <div class="firstWay">
+                    <span class="blue">{0}</span> <span class="green">{1}</span> <span class="red">{2}</span>
+                </div>
+                <div class="secondWay">
+                    <span class="red">{0}</span> <span class="blue">{1}</span> <span class="green">{2}</span>
+                </div>
+            </div>
+        </script>
+
+        <script type="text/template" id="dataErrorTemplate">
+            <div>
+                No Data
+            </div>
+        </script>
+
+        <script>
+            $(document).ready(function() {
+                var data = [{"col1":"data1","col2":"data2","col3":"data3"},
+                            {"col1":"dataA1","col2":"dataA2","col3":"dataA3"},
+                            {"col1":"dataB1","col2":"dataB2","col3":"dataB3"},
+                            {"col1":"dataC1","col2":"dataC2","col3":"dataC3"},
+                            {"col1":"dataD1","col2":"dataD2","col3":"dataD3"},
+                            {"col1":"dataE1","col2":"dataE2","col3":"dataE3"},
+                            {"col1":"dataF1","col2":"dataF2","col3":"dataF3"},
+                            {"col1":"dataG1","col2":"dataG2","col3":"dataG3"},
+                            {"col1":"dataH1","col2":"dataH2","col3":"dataH3"},
+                            {"col1":"dataI1","col2":"dataI2","col3":"dataI3"},
+                            {"col1":"dataJ1","col2":"dataJ2","col3":"dataJ3"},
+                            {"col1":"dataK1","col2":"dataK2","col3":"dataK3"},
+                            {"col1":"dataL1","col2":"dataL2","col3":"dataL3"},
+                            {"col1":"dataM1","col2":"dataM2","col3":"dataM3"},
+                            {"col1":"dataN1","col2":"dataN2","col3":"dataN3"}];
+
+                $('#dataPager').paging({
+                    data: data,
+                    contentHolder: 'dataContainer',
+                    template: 'dataTemplate',
+                    errorTemplate: 'dataErrorTemplate',
+                    informationToShow: ['col1', 'col2', 'col3'],
+                    informationToRefineBy: ['col1', 'col2', 'col3'],
+                    perPage: 6,
+                    pageLengths: [1, 3, 6, 9, 12, 15],
+                    startPage: 1,
+                    pagesToShow: 5,
+                    showOptions: true,
+                    showSearch: true,
+                    alwaysShowPager: true
+                });
+
+                $("#dataContainer > .col-md-4").each(function(){
+        		    var boundary = $(this);
+                    var follow = boundary.nextAll().slice(0, 2);
+
+        		    if (boundary.parent().attr('id') == 'dataContainer') {
+        				$("<div class='row'>").insertAfter(boundary).append(boundary).append(follow);
+        			}
+        		});
+
+        		$('#dataPager').on('pagingChange', function() {
+        			$("#dataContainer > .col-md-4").each(function(){
+        			    var boundary = $(this);
+                        var follow = boundary.nextAll().slice(0, 2);
+
+        			    if (boundary.parent().attr('id') == 'dataContainer') {
+        					$("<div class='row'>").insertAfter(boundary).append(boundary).append(follow);
+        				}
+        			});
+        		});
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+            <div id="dataPager">
+            </div>
+            <div id="dataContainer">
+            </div>
+        </div>
+    </body>
+</html>
