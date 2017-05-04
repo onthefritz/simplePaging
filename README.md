@@ -1,9 +1,9 @@
 # simplePaging
-Simple, easy to customize paging system using jQuery. 
+Simple, easy-to-customize paging system using jQuery. 
 
 ## Features
 1. Custom templates for the data
-2. Easy to style paging system
+2. Easy-to-style paging system
 3. Custom error template
 4. Uses JSON data to populate data and pager
 5. Custom event that is fired when anything happens in the pager
@@ -14,7 +14,7 @@ Simple, easy to customize paging system using jQuery.
 
 Simply download the simplePaging.js file and reference it in your code. Make sure to put this under the jQuery reference as this requires jQuery to function properly.
 
-To call the paging you will want to set up some html first.
+To call the paging, you will want to set up some html first.
 
 The quickest way will be with using `<div>` tags.
 
@@ -27,7 +27,7 @@ The quickest way will be with using `<div>` tags.
 
 You can use any container for holding the pager and content.
 
-For this example we will be using this data:
+For this example, we will be using this data:
 
 ~~~
 var data = [{"firstname":"John","lastname":"Smith"},
@@ -37,8 +37,8 @@ var data = [{"firstname":"John","lastname":"Smith"},
             {"firstname":"Billy","lastname":"Joe"}];
 ~~~
 
-Once you have this set up you will want to set up your data template. 
-This will be how the data is displayed to the user. You can use a table, bootstrap cols, or whatever you like.
+Once you have this set up, you will want to set up your data template. 
+This will be how the data is displayed to the user. You can use a table, bootstrap `col`s, or whatever you like.
 
 ~~~
 <script type="text/template" id="contentTemplate">
@@ -53,7 +53,7 @@ This will be how the data is displayed to the user. You can use a table, bootstr
 
 This will simply show the firstname and lastname from the data specified above.
 
-If you want to specifiy an error template to match your data you can create one using the same method from above.
+If you want to specifiy an error template to match your data, you can create one using the same method from above.
 
 ~~~
 <script type="text/template" id="contentErrorTemplate">
@@ -63,7 +63,7 @@ If you want to specifiy an error template to match your data you can create one 
 </script>
 ~~~
 
-This is optional. If you don't give an error template a simple one is created for you.
+This is optional. If you don't give an error template, a simple one is created for you.
 
 Next will be initalizing the paging system for this data. There are plenty of options for making sure that you have the right set up for your data.
 
@@ -85,21 +85,21 @@ $('#pager').paging({
 });
 ~~~
 
-To give a more in depth explination of these elements.
+To give a more in depth explanation of these elements:
 
 `data` - This is the data that is wanting to be displayed. You can use JSON from any source for this but it needs to be JSON.  
 `contentHolder` - This is the `id` for the container that will hold all the data once it has been applied to the template.  
 `template` - This is the template that is being used to display the data. We created two above. One for the data and one for the error.  
 `errorTemplate` - This is what is shown if there is no data to display. If you do not supply one there is a generic one that will fill in the area.  
-`informationToShow` - This is the information from the data given that you want to display. In our example the template has {0} and {1}. These will corrospond to `firstname` and `lastname` respectively. The order in the array will matter for what is displayed in each location.  
-`informationToRefineBy` - This is the information that the search will use to refine by. In our case we want to search on the `firstname` and `lastname` columns from the data.  
+`informationToShow` - This is the information from the data given that you want to display. In our example, the template has {0} and {1}. These will correspond to `firstname` and `lastname`, respectively. The order in the array will matter for what is displayed in each location.  
+`informationToRefineBy` - This is the information that the search will use to refine by. In our case, we want to search on the `firstname` and `lastname` columns from the data.  
 `perPage` - Default number of items to show per page. We are using a small amount of data so 1 per page will do for default.  
 `pageLengths` - This will be a drop down that will give options for the possible number of items to display per page.  
-`startPage` - This is what page you want to start on for your pager. The defualt is 1 which recommended but the option is there incase you want to change it.  
-`pagesToShow` - This is the number of pages to show in the pager at any point in time. If you have 100 pages of content this will only show the number of specified pages at a time. A simple [...] will be displayed before and after the are of pages that are being shown.   
+`startPage` - This is what page you want to start on for your pager. The defualt is 1 (which is recommended), but the option is there incase you want to change it.  
+`pagesToShow` - This is the number of pages to show in the pager at any point in time. If you have 100 pages of content, this will only show the number of specified pages at a time. A simple [...] will be displayed before and after the are of pages that are being shown.   
 `showOptions` - Shows the per page options drop down.  
 `showSearch` - Shows the search bar.  
-`alwaysShowPager` - Shows the pager even if there isn't any data to show. The only time this really applies is when you have the search bar shown. If they search and find no results we want to make sure that they can delete what they typed in without needing to refresh the page.  
+`alwaysShowPager` - Shows the pager even if there isn't any data to show. The only time this really applies is when you have the search bar shown. If they search and find no results, we want to make sure that they can delete what they typed in without needing to refresh the page.  
 
 Once you have all this put together you will get the follow display:
 
@@ -109,7 +109,7 @@ Once you have all this put together you will get the follow display:
 
 There is a custom event that is triggered anytime anything changes with the paging (e.g. change pages, change search criteria, change dropdown, etc.)
 
-To access this event just create an event handler on the element that is holding the pager.  
+To access this event, just create an event handler on the element that is holding the pager.  
 For our case we would want to put it on the `pager` element.
 
 ~~~
@@ -122,9 +122,9 @@ $('#pager').on('pagingChange', function() {
 
 I like bootstrap so when I created this I wanted to make sure that bootstrap was able to work alongside this plugin. 
 
-If you want to use bootstrap you will want to take a look into the index2.html file that is provided with this repo. There is a bit to much to explain here now.
+If you want to use bootstrap, you will want to take a look into the index2.html file that is provided with this repo. There is a bit too much to explain here now.
 
-You will have to utalize the custome event that is triggered on paging changes for this to work properly as well.
+You will have to utilize the custom event that is triggered on paging changes for this to work properly as well.
 
 ## License
 
